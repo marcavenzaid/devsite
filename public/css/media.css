@@ -1,0 +1,75 @@
+/* ------------------------------------------------------------------------------------------ 
+   	Sizes on different media
+   	h1 default is font-size: 2em; margin-top: 0.67em; margin-bottom: 0.67em;
+   	h2 default is font-size: 1.5em; margin-top: 0.83em; margin-bottom: 0.83em;
+   	h3 default is font-size: 1.17em; margin-top: 1em; margin-bottom: 1em;
+   	h4 default is font-size: 1em; margin-top: 1.33em; margin-bottom: 1.33em;
+   	h5 default is font-size: 0.83em; margin-top: 1.67em; margin-bottom: 1.67em;
+   	h6 default is font-size: 0.67em; margin-top: 2.33em; margin-bottom: 2.33em;
+   ------------------------------------------------------------------------------------------ */
+/* For devices from 480 and below */
+/*@media (max-width: 479px) {
+	h1 { font-size: 1.6em; }
+	h2 { font-size: 1.2em; }
+	h3 { font-size: 1.11em; }
+	h4 {}
+	h5 {}
+	h6 {}
+
+	.media-padding { padding: 30px; }
+
+	body {
+		font-size: 12px;
+		line-height: 26px;
+	}
+}*/
+/* For devices from 481px to 768px */
+/*@media (max-width: 767px) {
+	h1 { font-size: 1.8em; }
+	h2 { font-size: 1.3em; }
+	h3 { font-size: 1.14em; }
+	h4 {}
+	h5 {}
+	h6 {}
+	
+	.media-padding { padding: 40px; }
+
+	body {
+		font-size: 12px;
+		line-height: 26px;
+	}
+}*/
+/* The default (For devices from 769px to 1199px) */
+/*@media (min-width: 768px) and (max-width: 1199px) {
+	h1 { font-size: 2em; }
+	h2 { font-size: 1.5em; }
+	h3 { font-size: 1.17em; }
+	h4 {}
+	h5 {}
+	h6 {}
+	
+	.media-padding { padding: 50px; }
+
+	body {
+		font-size: 14px;
+		line-height: 26px;
+	}
+}*/
+/* For devices 1200px and up */
+/*@media (min-width: 1200px) {
+	h1 { font-size: 2.2em; }
+	h2 { font-size: 1.7em; }
+	h3 { font-size: 1.2em; }
+	h4 {}
+	h5 {}
+	h6 {}
+	
+	.media-padding { padding: 60px; }
+
+	body {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}*/
+
+/*# sourceMappingURL=media.css.map */

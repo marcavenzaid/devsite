@@ -1,0 +1,35 @@
+$background-color: #f5f8fa;
+$color-primary: #4fbbba;
+$color-error: #a94442;
+
+$btn-bg-color-high: #56d3d2;
+$btn-bg-color-low: #44a3a2;
+$btn-color-high: #fff;
+$btn-color-low: #222;
+$btn-font-size: 16px;
+
+$default-border-radius: 3px;
+$btn-border-radius: 4px;
+
+@mixin btn-animation($inset-value, $duration, $transition-type) {
+	/* Inset in the left and right */
+	/*box-shadow: inset $inset-value 0 0 $color;*/
+	-webkit-transition: all $duration $transition-type;
+	transition: all $duration $transition-type;
+}
+
+@mixin btn-animation-2($inset-value, $duration, $transition-type) {
+  /* Inset in bottom*/
+  box-shadow: inset 0 $inset-value 0 $btn-bg-color-high;
+  -webkit-transition: all $duration $transition-type;
+  transition: all $duration $transition-type;
+}
+
+@mixin transition($duration, $transition-type) {
+  -webkit-transition: all $duration $transition-type;
+  transition: all $duration $transition-type;
+}
+
+.color-primary {
+  color: $color-primary;
+}

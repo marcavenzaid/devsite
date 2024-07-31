@@ -1,0 +1,699 @@
+@import 'variables-and-mixins';
+@import 'animations';
+@import 'navbar-styles';
+
+@font-face {
+  font-family: "Raleway-Light";
+  src: url("../fonts/Raleway-Light.ttf");
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("../fonts/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("../fonts/Raleway-Medium.ttf");
+}
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("../fonts/Raleway-Bold.ttf");
+}
+
+body {
+	/*min-width: 1200px;*/
+	padding: 90px 0 0 0; /* The fixed-top navbar will overlay the body, unless the body is adjusted */
+	font-family: "Raleway-Regular";
+	font-size: 16px;
+	line-height: 26px;
+}
+
+p {
+	color: #555;
+}
+
+hr {
+	border-color: #ccc;
+	margin: 10px 0 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #444;
+}
+
+label {
+	color: #555;
+}
+
+input[type], select, textarea {
+	background-color: transparent !important;
+	color: #666 !important;
+}
+
+/* All input, select, and textarea, except for radio, checkbox, and file */
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):hover, select:hover, textarea:hover {
+	border: 1px solid $color-primary;
+	border-top: 1px solid $btn-bg-color-high;
+}
+
+input[type]:focus, select:focus, textarea:focus {
+	border: 1px solid $btn-bg-color-high;
+	border-top: 1px solid $btn-bg-color-high;
+	box-shadow: 0 1px 1px rgba(117, 209, 193, 0.075) inset, 0 0 8px rgba(117, 209, 193, 0.6) !important;
+	outline: 0 none !important;
+}
+
+input[type="file"] {
+	display: none;
+	font-size: $btn-font-size;
+}
+
+textarea {
+	resize: none;
+}
+
+button {
+	font-family: "Raleway-Medium";
+}
+
+a[type="button"] {
+	font-family: "Raleway-Medium";
+}
+
+select {
+	margin-bottom: 5px;
+}
+
+.remove-body-offset {
+	margin-top: -20px !important;
+}
+
+.background-default {
+	background-color: $background-color;
+}
+
+.background-white {
+	background-color: #fff;
+}
+
+.flash-message {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.default-padding {
+	padding-left: 90px;
+	padding-right: 90px;
+}
+
+.default-padding-box {
+	padding: 10px 90px 10px 90px;
+}
+
+/* ------------------------------------------------------------------------------------------
+	Bootstrap overrides
+   ------------------------------------------------------------------------------------------ */ 
+.list-group-item {
+	background-color: #333;
+}
+
+.list-group-item:hover {
+	background-color: #222 !important;
+	color: #86d4d8 !important;
+}
+
+.active {
+	background: #75b6ba !important;
+	text-shadow: none !important;
+}
+
+.label-default {
+	font-family: "Raleway-Light";
+	padding: 5px 10px;
+	background-color: #ddd;
+}
+
+.label-danger {
+	font-family: "Raleway-Light";
+	background-color: #d9534f;
+}
+
+.help-block {
+	margin-bottom: 0;
+}
+
+.help-block .glyphicon {
+	margin-right: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------
+	Return to Top
+   ------------------------------------------------------------------------------------------ */
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;    
+}
+
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);    
+}
+
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------
+	Form
+   ------------------------------------------------------------------------------------------ */ 
+/* Used in the outer div  to make the div take up all spaces */
+.remove-margin-padding {
+	margin: 0;
+	padding: 0;
+}
+
+._panel-heading {
+	border-top-left-radius: $default-border-radius;
+	border-top-right-radius: $default-border-radius;
+	border-bottom: 2px solid $color-primary;
+/*	border-left: 10px solid $color-primary;
+*/	margin-bottom: 10px;
+	padding: 20px;
+	font-size: 2em;
+	font-family: "Raleway-Medium";
+	letter-spacing: 5px;
+	background-color: transparent;
+	color: $color-primary;
+}
+
+._panel-heading-2 {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	padding: 10px 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.panel-default {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+._panel-footer {
+	padding: 15px;
+	background-color: transparent;
+	border-top: 1px solid #ddd;
+}
+
+.default-font-color {
+	color: #999;
+} 
+
+._errors {
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+._errors li {
+	font-size: 15px;
+	font-weight: 600;
+	color: $color-error;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Buttons 
+   ------------------------------------------------------------------------------------------ */ 
+._btn-default {
+	background-color: $color-primary;
+	color: $btn-color-high;	
+	height: 40px;
+	border-radius: $btn-border-radius;
+	font-size: $btn-font-size;
+	font-size: 16px;
+	@include btn-animation(0, 0.25s, ease);
+}
+
+._btn-default:hover {
+	background-color: $btn-bg-color-high;
+	color: $btn-color-high;	
+	@include btn-animation(7px, 0.25s, ease);
+}
+
+._btn-default-2 {
+	background-color: #fff;
+	color: $btn-color-low;
+	height: 40px;
+	line-height: 25px;
+	border: 1px solid $color-primary;
+	border-radius: $btn-border-radius;
+	font-size: $btn-font-size;
+	@include btn-animation(0, 0.25s, ease);
+}
+
+._btn-default-2:hover {
+	border: 1px solid transparent;
+	background-color: $btn-bg-color-low;
+	color: $btn-color-high;
+	@include btn-animation(7px, 0.25s, ease);
+}
+
+._btn-default:active {
+	color: $btn-color-high;
+	background-color: $btn-bg-color-low;
+}
+
+._btn-default-2:active {
+	color: $btn-color-high;
+	background-color: $btn-bg-color-low;
+}
+
+._btn-transparent {
+	margin: 0;
+	border-radius: 0;
+	color: $btn-color-low;
+	font-size: $btn-font-size;
+	@include btn-animation-2(0, 0.25s, ease);
+}
+
+._btn-transparent:hover {
+	color: $btn-bg-color-high;
+	@include btn-animation-2(-4px, 0.25s, ease);
+}
+
+._btn-transparent:active {
+	color: $btn-bg-color-high;
+	background-color: $btn-bg-color-high;
+}
+
+._btn-link {
+	background-color: transparent !important;
+	color: #ccc;
+}
+
+.btn-file {
+	font-family: "Raleway-Medium";
+	line-height: 25px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	landing page
+   ------------------------------------------------------------------------------------------ */  
+.title {
+	margin-bottom: 30px;
+}
+
+/* ------------------------------
+   	Footer
+   ------------------------------ */  
+
+.footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	padding: 0px 80px 0px 80px;
+	background-color: #333;
+}
+
+.footer h3 {
+	color: #eee;
+}
+
+.footer ul {
+	color: #ccc;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	line-height: 28px;
+}
+
+.copyright {
+	font-size: 0.9em;
+	margin: 0px -80px 0px -80px;
+	padding: 20px 50px;
+	text-align: left;
+	background-color: #111;
+	color: #999;
+	border-top: 1px solid $color-primary;
+}
+
+/* ------------------------------------------------------------------------------------------
+ 	Login
+   ------------------------------------------------------------------------------------------ */
+#remember {
+	margin-left: 10px;
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+/*.login-body {
+	background-image: url('../images/');
+	background-size: 1366px 500px;
+}*/
+
+#login-container {
+	margin: 0 auto;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	max-width: 500px;
+}
+
+#login-container button {	
+	margin-bottom: 5px;
+}
+
+#login-container button:hover, #login-container a:hover {
+	@include btn-animation(30px, 0.25s, ease);
+}
+
+.login-signup-bg {
+	margin-top: -50px;
+	background-image: url("../images/loginbg1.jpg");
+	background-repeat: no-repeat;
+	background-size: 1666px 1300px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Registration
+   ------------------------------------------------------------------------------------------ */  
+
+#signup-container {
+	margin: 0 auto;	
+	margin-top: 100px;
+	margin-bottom: 30px;
+	max-width: 750px;
+}
+
+#signup-container .panel-body {
+	padding-right: 40px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Home
+   ------------------------------------------------------------------------------------------ */
+
+.home-sidebar {
+	margin-left: 20px;
+	/* temp height */
+}
+
+.home-menu {
+	margin-bottom: 10px;
+}
+
+.home-menu .dropdown {
+	margin-top: 3px;
+}
+
+.home-menu a {
+	color: $color-primary;
+}
+
+.home-menu a:hover {
+	color: $btn-bg-color-high !important;
+}
+
+.home-menu a:hover {
+	color: $color-primary;
+	@include transition(0.25s, ease);
+}
+
+/* ------------------------------------------------------------------------------------------
+	Profile
+   ------------------------------------------------------------------------------------------ */  
+
+.profile-nav {	
+	padding: 0 10px 0 10px;
+}
+
+.profile-nav ._btn-transparent {
+	height: 70px;
+	line-height: 50px;
+	margin-left: -2px;
+}
+
+.profile-info-container {
+	word-break: break-all;
+	padding-right: 60px;
+}
+
+.profile-post-container {
+	padding: 15px 20px;
+	/* temp height just to see the layout*/
+}
+
+.profile-info {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.profile-pic {	
+	display: block;
+    margin: 10 auto 0 auto;	
+    width: 330px;
+    /*height: 320px;*/
+}
+
+.profile-name {
+	/**/
+}
+
+.profile-username {
+	color: #888;
+}
+
+.profile-bio {
+	margin-top: 30px;
+	font-size: 14px;
+}
+
+.profile-email {
+}
+
+.profile-email-icon {
+	margin-left: 10px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Post Form
+   ------------------------------------------------------------------------------------------ */
+.post-container {
+	
+}
+
+
+/* ------------------------------------------------------------------------------------------
+   	Post
+   ------------------------------------------------------------------------------------------ */
+
+/* The background of the image (often seen if image has smaller in width) */
+.post-img {
+	background-color: #000;
+}
+
+.post-img img {
+	margin: 0 auto;
+	max-height: 700px;
+}
+
+/* The post in home page */
+.post-home-icon {
+	height: 70px;
+	width: 70px;
+}
+
+.post-title {
+	font-family: "Raleway-Medium";
+	font-size: 1.3em;
+	color: #444;
+}
+
+.post-genre {
+	color: #999;
+}
+
+.post-tags {
+	margin: 10px 0 5px 0;
+}
+
+.post-tags span {
+	font-size: 11px;
+	color: #999;
+}
+
+.post-description {
+	margin: 5px 0 0 0;
+	font-size: 14px;
+}
+
+.post-interaction {
+	margin-top: 15px;
+}
+
+.post-profile-pic {
+	height: 60px;
+	width: 60px;
+}
+
+.post-download-btn {	
+	height: 35px;
+	float: right;
+	margin-top: -5px;
+}
+
+.post-settings {
+	position: absolute;
+	right: 15px;
+}
+
+.view-apps {
+	float: right;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Edit
+   ------------------------------------------------------------------------------------------ */
+
+.edit-menu a {
+	border: none;
+	color: #999;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Edit > Change Profile Pic
+   ------------------------------------------------------------------------------------------ */
+
+.change-profile-pic {
+	/*height: 380px;*/
+	width: 380px;
+	margin: 0 auto 30px auto;
+}
+
+/* ------------------------------------------------------------------------------------------
+	Search
+   ------------------------------------------------------------------------------------------*/
+
+.search-profile-pic {
+	height: 75px;
+	width: 75px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Farewell
+   ------------------------------------------------------------------------------------------ */
+
+.farewell {
+	margin: 30px 0px;
+	padding: 10px 20px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Modal
+   ------------------------------------------------------------------------------------------ */
+
+.modal-body hr {
+	margin-top: 15px;
+}
+
+.modal-body p {
+	margin-left: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Admin Panel
+   ------------------------------------------------------------------------------------------ */
+
+.admin-sidebar {
+	background-color: #333;	
+	border-right: 1px solid #aaa;
+	height: 89vh;
+	padding-top: 10px;
+}
+
+.admin-sidebar h1, .admin-sidebar .list-group-item {
+	color: #ddd;	
+}
+
+.admin-sidebar .list-group-item {
+	font-size: 20px;
+	padding: 25px 0;
+	border: none;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 0;
+}
+
+.admin-sidebar .list-group, .admin-sidebar .list-group-item {	
+	box-shadow: none;
+}
+
+.admin-content {
+	
+}
+
+/* ------------------------------------------------------------------------------------------
+   	Star Rating
+   ------------------------------------------------------------------------------------------ */
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 25px;
+  color: #666;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #ffd700;
+   left: 0;
+}
+
+.btn-star {
+	background: none;
+	border: none;
+}
+
+.slogan p {
+	font-size: 50px !important;
+	padding-top: 60px;
+	padding-bottom: 200px;
+}
+
+.dbbg {
+	background-image: url('../images/dashboardbg.jpg');
+
+}
+
+.shit {
+	background-image: url('../images/dashboardbg2.jpg');
+	background-repeat: no-repeat;	
+}
